@@ -1,6 +1,6 @@
 from webexteamssdk import WebexTeamsAPI
 from flask import Flask, request
-import cards
+from cards import input_card
 
 
 app = Flask(__name__)
@@ -21,7 +21,7 @@ def index():
         WebexTeamsAPI.get_attachments = get_attachments
 
         request_json = request.get_json()
-        
+
         if request.args and 'body' in request.args:
             webhook = request.args.get('body')
             room_id = webhook['data']['roomId']
