@@ -17,6 +17,7 @@ or implied. """
 from webexteamssdk import WebexTeamsAPI
 from flask import Flask, request
 from cards import input_card
+from sys import stdout
 
 
 app = Flask(__name__)
@@ -40,6 +41,7 @@ def index():
         print(type(request))
         print(type(request_json))
         print(request_json)
+        stdout.flush()
 
         if request.args and 'body' in request.args:
             webhook = request.args.get('body')
