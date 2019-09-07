@@ -1,3 +1,8 @@
+# vscode
+.vscode/
+# wbx acceess roken
+wbx_access_token
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
