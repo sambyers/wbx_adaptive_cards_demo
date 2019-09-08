@@ -34,7 +34,7 @@ oppty_update_card = {
             'body': [
                 {
                     "type": "TextBlock",
-                    "text": "Most recent oppurtunity update",
+                    "text": "Most recent opportunity update",
                     "weight": "Bolder",
                     "size": "Medium"
                 },
