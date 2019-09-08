@@ -25,6 +25,129 @@ quick_deal_info_card = {
         }
     }
 
+oppty_update_card = {
+        'contentType': 'application/vnd.microsoft.card.adaptive',
+        'content': {
+            '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
+            'type': 'AdaptiveCard',
+            'version': '1.1',
+            'body': [
+                {
+                    "type": "TextBlock",
+                    "text": "Publish Adaptive Card schema",
+                    "weight": "Bolder",
+                    "size": "Medium"
+                },
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "width": "auto",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "https://pbs.twimg.com/profile_images/3647943215/d7f12830b3c17a5a9e4afcc370e3a37e_400x400.jpeg",
+                                    "size": "Small",
+                                    "style": "Person"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "width": "stretch",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Matt Hidinger",
+                                    "weight": "Bolder",
+                                    "wrap": 'true'
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "spacing": "None",
+                                    "text": "Created {{DATE(2019-08-14T06:08:39Z, SHORT)}}",
+                                    "isSubtle": 'true',
+                                    "wrap": 'true'
+                                }
+                            ]
+                        }
+                        ]
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "SE work has completed on this oppurtunity. The customer is happy with the proposed solution and has no technical objections.",
+                        "wrap": 'true'
+                    },
+                    {
+                        "type": "FactSet",
+                        "facts": [
+                            {
+                                "title": "SE Status:",
+                                "value": "Tech Close"
+                            },
+                            {
+                                "title": "Expected Book Date:",
+                                "value": "11/15/2019"
+                            },
+                            {
+                                "title": "Assigned to:",
+                                "value": "Matt Hidinger"
+                            },
+                            {
+                                "title": "Status:",
+                                "value": "Proposal"
+                            }
+                        ]
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.ShowCard",
+                        "title": "Set due date",
+                        "card": {
+                            "type": "AdaptiveCard",
+                            "body": [
+                                {
+                                    "type": "Input.Date",
+                                    "id": "dueDate"
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "OK"
+                                }
+                            ],
+                            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+                        }
+                    },
+                    {
+                        "type": "Action.ShowCard",
+                        "title": "Comment",
+                        "card": {
+                            "type": "AdaptiveCard",
+                            "body": [
+                                {
+                                    "type": "Input.Text",
+                                    "id": "comment",
+                                    "isMultiline": 'true',
+                                    "placeholder": "Enter your comment"
+                                }
+                            ],
+                            "actions": [
+                                {
+                                    "type": "Action.Submit",
+                                    "title": "OK"
+                                }
+                            ],
+                            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+                        }
+                    }
+                ]
+        }
+    }
+
 add_contact_card = {
         'contentType': 'application/vnd.microsoft.card.adaptive',
         'content': {
