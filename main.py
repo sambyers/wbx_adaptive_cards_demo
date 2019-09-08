@@ -39,30 +39,23 @@ def index():
 
         request_json = request.get_json()
 
-        if request.form and 'data' in request.form:
-            data = request.form.get('data')
-            room_id = data['roomId']
-            wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
-                'broken or you are using the mobile app for which cards are not supported yet.', attachments=quick_deal_info_card)
-            wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
-                'broken or you are using the mobile app for which cards are not supported yet.', attachments=add_contact_card)
-            
-            response_msg = {'status': 'success'}
-            resp = jsonify(response_msg)
-            resp.status_code = 201
-            return resp
-            
-        elif request_json and 'data' in request_json:
+        if request_json and 'data' in request_json:
             room_id = request_json['data']['roomId']
-            wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
-                'broken or you are using the mobile app for which cards are not supported yet.', attachments=quick_deal_info_card)
-            wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
-                'broken or you are using the mobile app for which cards are not supported yet.', attachments=add_contact_card)
+            msg_id = request_json['data']['id']
+            msg_txt = wbxapi.messages.get(msg_id)
+
+            if 'deal' in msg_txt:
+                wbx_msg_resp = wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
+                    'broken or you are using the mobile app for which cards are not supported yet.', attachments=quick_deal_info_card)
+            elif 'contact' in msg_txt:
+                wbx_msg_resp = wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
+                    'broken or you are using the mobile app for which cards are not supported yet.', attachments=add_contact_card)
             
-            response_msg = {'status': 'success'}
-            resp = jsonify(response_msg)
-            resp.status_code = 201
-            return resp
+            if wbx_msg_resp:
+                response_msg = {'status': 'success'}
+                resp = jsonify(response_msg)
+                resp.status_code = 201
+                return resp
 
         else:
             response_msg = {'status': 'fail',

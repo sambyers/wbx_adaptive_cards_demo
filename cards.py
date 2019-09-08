@@ -101,8 +101,66 @@ add_contact_card = {
                     ]
                 },
                 {
+                    'type': 'TextBlock',
+                    'text': 'Job Function'
+                },
+                {
+                    'type': 'Input.ChoiceSet',
+                    'id': 'jFunction',
+                    'value': '1',
+                    'choices': [
+                        {
+                            'title': 'Network Management',
+                            'value': 'nm'
+                        },
+                        {
+                            'title': 'Engineering',
+                            'value': 'eng'
+                        },
+                        {
+                            'title': 'Operations',
+                            'value': 'ops'
+                        },
+                        {
+                            'title': 'Technical Support',
+                            'value': 'ts'
+                        }
+                    ]
+                },
+                {
+                    'type': 'TextBlock',
+                    'text': 'Job Level'
+                },
+                {
+                    'type': 'Input.ChoiceSet',
+                    'id': 'jobLevel',
+                    'value': '1',
+                    'choices': [
+                        {
+                            'title': 'CxO',
+                            'value': 'CxO'
+                        },
+                        {
+                            'title': 'Director',
+                            'value': 'Director'
+                        },
+                        {
+                            'title': 'Senior Manager',
+                            'value': 'Senior Manager'
+                        },
+                        {
+                            'title': 'Manager',
+                            'value': 'Manager'
+                        },
+                        {
+                            'title': 'Individual Contributer',
+                            'value': 'Individual Contributer'
+                        }
+                    ]
+                },
+                {
                     'type': 'Input.Toggle',
-                    'title': 'Decision maker? (True/False)',
+                    'title': 'Decision maker?',
                     'id': 'dMaker',
                     'value': 'false',
                     'wrap': 'false'
