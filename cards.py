@@ -34,7 +34,7 @@ oppty_update_card = {
             'body': [
                 {
                     "type": "TextBlock",
-                    "text": "Publish Adaptive Card schema",
+                    "text": "Most recent oppurtunity update",
                     "weight": "Bolder",
                     "size": "Medium"
                 },
