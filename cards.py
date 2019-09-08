@@ -175,27 +175,6 @@ input_demo_card = {
                 'data': {
                     'id': '1234567890'
                 }
-            },
-            {
-                'type': 'Action.ShowCard',
-                'title': 'Show Card',
-                'card': {
-                    'type': 'AdaptiveCard',
-                    'body': [
-                        {
-                            'type': 'Input.Text',
-                            'placeholder': 'enter comment',
-                            'style': 'text',
-                            'id': 'CommentVal'
-                        }
-                    ],
-                    'actions': [
-                        {
-                            'type': 'Action.Submit',
-                            'title': 'OK'
-                        }
-                    ]
-                }
             }
         ]
     }
