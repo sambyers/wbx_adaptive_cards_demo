@@ -43,18 +43,24 @@ def index():
             data = request.form.get('data')
             room_id = data['roomId']
             wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_card)
-            response_data = {'message': 'received'}
-            response_data.status_code = 200
-            return response_data
+            response_msg = {'status': 'success'}
+            resp = jsonify(response_msg)
+            resp.status_code = 200
+            return resp
             
         elif request_json and 'data' in request_json:
             room_id = request_json['data']['roomId']
             wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_card)
-            response_data = {'message': 'received'}
-            response_data.status_code = 200
-            return response_data
+            response_msg = {'status': 'success'}
+            resp = jsonify(response_msg)
+            resp.status_code = 200
+            return resp
 
         else:
-            response_data = {'message': 'request not supported'}
-            response_data.status_code = 200
-            return response_data
+            response_msg = {'status': 'fail',
+                            'data': {
+                                'message': "request not supported"
+                            }}
+            resp = jsonify(response_msg)
+            resp.status_code = 400
+            return resp
