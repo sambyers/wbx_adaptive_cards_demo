@@ -25,7 +25,7 @@ input_card = {
         }
     }
 
-input_demo_card = {
+add_contact_card = {
         'contentType': 'application/vnd.microsoft.card.adaptive',
         'content': {
             '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
@@ -36,20 +36,19 @@ input_demo_card = {
                     'type': 'TextBlock',
                     'size': 'Medium',
                     'weight': 'Bolder',
-                    'text': 'Input.Text elements',
+                    'text': 'Add SFDC End Customer Contact',
                     'horizontalAlignment': 'Center'
                 },
                 {
                     'type': 'Input.Text',
-                    'placeholder': 'Name',
+                    'placeholder': 'First Name',
                     'style': 'text',
-                    'id': 'SimpleVal'
-                },
-                {
+                    'id': 'fName'
+                },                {
                     'type': 'Input.Text',
-                    'placeholder': 'Homepage',
-                    'style': 'Url',
-                    'id': 'UrlVal'
+                    'placeholder': 'Last Name',
+                    'style': 'text',
+                    'id': 'lName'
                 },
                 {
                     'type': 'Input.Text',
@@ -71,29 +70,8 @@ input_demo_card = {
                     'id': 'MultiLineVal'
                 },
                 {
-                    'type': 'Input.Number',
-                    'placeholder': 'Quantity',
-                    'min': '-5',
-                    'max': '5',
-                    'value': '1',
-                    'id': 'NumVal'
-                },
-                {
-                    'type': 'Input.Date',
-                    'placeholder': 'Due Date',
-                    'id': 'DateVal',
-                    'value': '2017-09-20'
-                },
-                {
                     'type': 'TextBlock',
-                    'size': 'Medium',
-                    'weight': 'Bolder',
-                    'text': 'Input.ChoiceSet',
-                    'horizontalAlignment': 'Center'
-                },
-                {
-                    'type': 'TextBlock',
-                    'text': 'What color do you want? (compact)'
+                    'text': 'Add this contact to which of your accounts?'
                 },
                 {
                     'type': 'Input.ChoiceSet',
@@ -101,46 +79,34 @@ input_demo_card = {
                     'value': '1',
                     'choices': [
                         {
-                            'title': 'Red',
-                            'value': '1'
+                            'title': 'Customer 1',
+                            'value': 'c1'
                         },
                         {
-                            'title': 'Green',
-                            'value': '2'
+                            'title': 'Customer 2',
+                            'value': 'c2'
                         },
                         {
-                            'title': 'Blue',
-                            'value': '3'
+                            'title': 'Customer 3',
+                            'value': 'c3'
+                        },
+                        {
+                            'title': 'Customer 4',
+                            'value': 'c4'
+                        },
+                        {
+                            'title': 'Customer 5',
+                            'value': 'c5'
                         }
                     ]
                 },
                 {
-                    'type': 'TextBlock',
-                    'text': 'What colors do you want? (multiselect)'
-                },
-                {
-                    'type': 'TextBlock',
-                    'size': 'Medium',
-                    'weight': 'Bolder',
-                    'text': 'Input.Toggle',
-                    'horizontalAlignment': 'Center'
-                },
-                {
                     'type': 'Input.Toggle',
-                    'title': 'I accept the terms and conditions (True/False)',
-                    'id': 'AcceptsTerms',
+                    'title': 'Decision maker? (True/False)',
+                    'id': 'dMaker',
                     'value': 'false',
                     'wrap': 'false'
                 },
-                {
-                    'type': 'Input.Toggle',
-                    'title': 'Red cars are better than other cars',
-                    'valueOn': 'RedCars',
-                    'valueOff': 'NotRedCars',
-                    'id': 'ColorPreference',
-                    'value': 'NotRedCars',
-                    'wrap': 'false'
-                }
             ],
             'actions': [
                 {
@@ -153,3 +119,4 @@ input_demo_card = {
             ]
         }
     }
+
