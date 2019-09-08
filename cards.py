@@ -83,6 +83,14 @@ oppty_update_card = {
                         "type": "FactSet",
                         "facts": [
                             {
+                                "title": "Deal ID:",
+                                "value": "0123456789"
+                            },
+                            {
+                                "title": "Status:",
+                                "value": "Proposal"
+                            }
+                            {
                                 "title": "SE Status:",
                                 "value": "Tech Close"
                             },
@@ -93,10 +101,6 @@ oppty_update_card = {
                             {
                                 "title": "Assigned to:",
                                 "value": "Matt Hidinger"
-                            },
-                            {
-                                "title": "Status:",
-                                "value": "Proposal"
                             }
                         ]
                     }
