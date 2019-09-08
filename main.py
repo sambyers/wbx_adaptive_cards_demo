@@ -44,10 +44,10 @@ def index():
             msg_id = request_json['data']['id']
             msg_txt = wbxapi.messages.get(msg_id)
 
-            if 'deal' in msg_txt:
+            if 'deal' in msg_txt.text:
                 wbx_msg_resp = wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
                     'broken or you are using the mobile app for which cards are not supported yet.', attachments=quick_deal_info_card)
-            elif 'contact' in msg_txt:
+            elif 'contact' in msg_txt.text:
                 wbx_msg_resp = wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
                     'broken or you are using the mobile app for which cards are not supported yet.', attachments=add_contact_card)
             
