@@ -66,5 +66,5 @@ def index():
                                 'message': "request not supported"
                             }}
             resp = jsonify(response_msg)
-            resp.status_code = 403
+            resp.status_code = 400
             return resp
