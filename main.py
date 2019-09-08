@@ -16,7 +16,7 @@ or implied. """
 
 from webexteamssdk import WebexTeamsAPI
 from flask import Flask, request, Response, jsonify
-from cards import input_card
+from cards import input_card, input_demo_card
 
 
 app = Flask(__name__)
@@ -43,6 +43,8 @@ def index():
             data = request.form.get('data')
             room_id = data['roomId']
             wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_card)
+            wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_demo_card)
+            
             response_msg = {'status': 'success'}
             resp = jsonify(response_msg)
             resp.status_code = 201
@@ -51,6 +53,8 @@ def index():
         elif request_json and 'data' in request_json:
             room_id = request_json['data']['roomId']
             wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_card)
+            wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_demo_card)
+            
             response_msg = {'status': 'success'}
             resp = jsonify(response_msg)
             resp.status_code = 201
