@@ -1,4 +1,4 @@
-input_card = {
+quick_deal_info_card = {
         'contentType': 'application/vnd.microsoft.card.adaptive',
         'content': {
             '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
