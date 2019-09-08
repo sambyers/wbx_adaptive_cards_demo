@@ -42,8 +42,10 @@ def index():
         if request.form and 'data' in request.form:
             data = request.form.get('data')
             room_id = data['roomId']
-            wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_card)
-            wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_demo_card)
+            wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
+                'broken or you are using the mobile app for which cards are not supported yet.', attachments=input_card)
+            wbxapi.messages.create(roomId=room_id, text='Oops! Something is '
+                'broken or you are using the mobile app for which cards are not supported yet.', attachments=input_demo_card)
             
             response_msg = {'status': 'success'}
             resp = jsonify(response_msg)

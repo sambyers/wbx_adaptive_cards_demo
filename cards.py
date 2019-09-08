@@ -220,8 +220,7 @@ input_demo_card = {
                             'type': 'Action.Submit',
                             'title': 'OK'
                         }
-                    ],
-                    '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json'
+                    ]
                 }
             }
         ]
