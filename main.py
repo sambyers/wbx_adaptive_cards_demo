@@ -29,7 +29,7 @@ def get_attachments(self, id):
     json_data = self._session.get('/attachment/actions/' + id)
     return json_data
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def index():
     if request:
 
