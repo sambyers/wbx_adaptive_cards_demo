@@ -89,7 +89,7 @@ oppty_update_card = {
                             {
                                 "title": "Status:",
                                 "value": "Proposal"
-                            }
+                            },
                             {
                                 "title": "SE Status:",
                                 "value": "Tech Close"
