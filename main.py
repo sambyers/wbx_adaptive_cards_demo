@@ -39,17 +39,17 @@ def index():
 
         request_json = request.get_json()
         print(type(request))
+        print(request.args.get('data'))
         print(type(request_json))
         print(request_json)
         stdout.flush()
 
         if request.args and 'data' in request.args:
             webhook = request.args.get('data')
-            room_id = webhook['data']['roomId']
+            room_id = webhook['roomId']
             wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_card)
 
         elif request_json and 'data' in request_json:
-            webhook =  request_json['data']
             room_id = webhook['data']['roomId']
             wbxapi.messages.create(roomId=room_id, text='Oops! Something is broken or you are using the mobile app for which cards are not supported yet.', attachments=input_card)
 
