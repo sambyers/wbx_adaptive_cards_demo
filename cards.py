@@ -7,15 +7,13 @@ input_card = {
                 'body': [
                     {
                         'type': 'TextBlock',
-                        'text': 'Please enter your zip code for weather...',
-                        'size': 'Large',
-                        'color': 'Good'
+                        'text': 'Enter Deal ID for quick status:',
+                        'size': 'Large'
                     },
                     {
-                        'type': 'Input.Text',
-                        'id': 'zip',
-                        'placeholder': '23060',
-                        'style': 'zip'
+                        'type': 'Input.Number',
+                        'id': 'dealId',
+                        'placeholder': '1234567890'
                     }
                 ],
                 'actions': [
@@ -106,30 +104,6 @@ input_demo_card = {
             {
                 'type': 'Input.ChoiceSet',
                 'id': 'CompactSelectVal',
-                'value': '1',
-                'choices': [
-                    {
-                        'title': 'Red',
-                        'value': '1'
-                    },
-                    {
-                        'title': 'Green',
-                        'value': '2'
-                    },
-                    {
-                        'title': 'Blue',
-                        'value': '3'
-                    }
-                ]
-            },
-            {
-                'type': 'TextBlock',
-                'text': 'What color do you want? (expanded)'
-            },
-            {
-                'type': 'Input.ChoiceSet',
-                'id': 'SingleSelectVal',
-                'style': 'expanded',
                 'value': '1',
                 'choices': [
                     {
